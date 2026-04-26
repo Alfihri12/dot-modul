@@ -1,0 +1,114 @@
+@import "/home/alfihri/.cache/wal/colors-waybar.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: alpha(@background, 0.85);
+  color: @foreground;
+  border-radius: 12px;
+  margin: 6px 10px;
+}
+
+#workspaces,
+#clock,
+#battery,
+#network,
+#wireplumber,
+#custom-kitty,
+#custom-control,
+#custom-explorer,
+#custom-code,
+#custom-firefox,
+#custom-power {
+  padding: 0 10px;
+  margin: 4px 2px;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  color: @color8;
+  background: transparent;
+}
+
+#workspaces button.active {
+  color: @color4;
+  border-bottom: 2px solid @color4;
+}
+
+#workspaces button:hover {
+  color: @foreground;
+}
+
+#clock {
+  font-weight: bold;
+  color: @color3;
+}
+
+#wireplumber {
+  color: @color2;
+}
+
+#network {
+  color: @color4;
+}
+
+#battery {
+  color: @color5;
+}
+
+#battery.charging {
+  color: @color2;
+}
+
+#custom-kitty,
+#custom-control,
+#custom-explorer,
+#custom-code,
+#custom-firefox {
+  color: @foreground;
+  transition: all 0.2s ease;
+}
+
+#custom-kitty:hover {
+  color: @color1;
+}
+
+#custom-control:hover {
+  color: @color3;
+}
+
+#custom-explorer:hover {
+  color: @color2;
+}
+
+#custom-code:hover {
+  color: @color4;
+}
+
+#custom-firefox:hover {
+  color: @color1;
+}
+
+#custom-power {
+  color: @color1;
+  margin-right: 8px;
+}
+
+#custom-power:hover {
+  background: alpha(@color1, 0.2);
+  border-radius: 6px;
+}
+
+#clock:hover,
+#battery:hover,
+#network:hover,
+#wireplumber:hover {
+  background: alpha(@foreground, 0.05);
+  border-radius: 6px;
+}

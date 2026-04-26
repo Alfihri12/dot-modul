@@ -1,0 +1,122 @@
+/* =========================
+   GLOBAL
+========================= */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(20, 20, 20, 0.85);
+    color: #cdd6f4;
+    border-radius: 12px;
+    margin: 6px 10px;
+}
+
+/* =========================
+   SPACING
+========================= */
+#workspaces,
+#clock,
+#battery,
+#network,
+#wireplumber,
+#custom-kitty,
+#custom-control,
+#custom-explorer,
+#custom-code,
+#custom-firefox,
+#custom-power,
+#custom-reboot {
+    padding: 0 10px;
+    margin: 4px 2px;
+}
+
+/* =========================
+   WORKSPACES
+========================= */
+#workspaces button {
+    padding: 0 8px;
+    color: #7f849c;
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: #89b4fa;
+    border-bottom: 2px solid #89b4fa;
+}
+
+#workspaces button:hover {
+    color: #cdd6f4;
+}
+
+/* =========================
+   MODULE COLORS
+========================= */
+#clock {
+    font-weight: bold;
+    color: #f9e2af;
+}
+
+#wireplumber {
+    color: #a6e3a1;
+}
+
+#network {
+    color: #89b4fa;
+}
+
+#battery {
+    color: #fab387;
+}
+
+#battery.charging {
+    color: #a6e3a1;
+}
+
+/* =========================
+   CUSTOM APPS
+========================= */
+#custom-kitty,
+#custom-control,
+#custom-explorer,
+#custom-code,
+#custom-firefox {
+    color: #cdd6f4;
+    transition: all 0.2s ease;
+}
+
+#custom-kitty:hover     { color: #f38ba8; }
+#custom-control:hover   { color: #f9e2af; }
+#custom-explorer:hover    { color: #a6e3a1; }
+#custom-code:hover      { color: #89b4fa; }
+#custom-firefox:hover   { color: #f38ba8; }
+
+/* =========================
+   POWER / SYSTEM
+========================= */
+#custom-power,
+#custom-reboot {
+    color: #f38ba8;
+    margin-right: 8px;
+}
+
+#custom-power:hover,
+#custom-reboot:hover {
+    background: rgba(255, 0, 0, 0.2);
+    border-radius: 6px;
+}
+
+/* =========================
+   HOVER GLOBAL
+========================= */
+#clock:hover,
+#battery:hover,
+#network:hover,
+#wireplumber:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}

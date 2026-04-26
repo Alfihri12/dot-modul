@@ -1,0 +1,77 @@
+{
+  "font": "JetBrainsMono Nerd Font",
+  "layer": "top",
+  "position": "top",
+  "reload_style_on_change": true,
+  "modules-left": ["clock", "wireplumber", "hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "custom/kitty",
+    "custom/control",
+    "custom/explorer",
+    "custom/code",
+    "custom/chrome",
+    "network",
+    "battery",
+    "custom/power",
+  ],
+  "battery": {
+    "format": "{capacity}% ",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "tooltip": true,
+    "interval": 30,
+    "exec": "cat /sys/class/power_supply/BAT0/capacity",
+  },
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5],
+    },
+  },
+  "hyprland/window": {
+    "separate-outputs": true,
+  },
+  "custom/kitty": {
+    "format": "  ",
+    "on-click": "kitty",
+  },
+  "custom/explorer": {
+    "format": "  ",
+    "on-click": "thunar",
+  },
+  "custom/code": {
+    "format": "  ",
+    "on-click": "code",
+  },
+  "custom/chrome": {
+    "format": "  ",
+    "on-click": "google-chrome-stable",
+  },
+  "wireplumber": {
+    "format": "  {volume}%",
+    "format-muted": "  Muted",
+    "on-click": "pavucontrol",
+    "tooltip": false,
+  },
+  "custom/power": {
+    "format": "  ",
+    "on-click": "~/.config/waybar/scripts/power-menu.sh",
+  },
+  "clock": {
+    "format": "{:%H:%M:%S}",
+    "tooltip-format": "{:%A, %d %B %Y}",
+    "interval": 1,
+  },
+  "network": {
+    "exec": "~/.config/waybar/scripts/network-status.sh",
+    "interval": 5,
+    "on-click": "kitty nmtui",
+    "tooltip": false,
+  },
+  "custom/expand": {
+    "format": "",
+    "tooltip": false,
+  },
+}
