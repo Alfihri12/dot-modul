@@ -130,7 +130,7 @@ hl.config({
         shadow           = {
             enabled      = true,
             range        = 6,
-            offset       = { x = 0, y = 4 },
+            offset       = { 0, 4 },
             render_power = 10,
             color        = 0xee1a1a1a,
         },
@@ -138,8 +138,6 @@ hl.config({
         blur             = {
             enabled                   = true,
             xray                      = true,
-            special_                  = false, -- If true, only blur windows with blur special set to true. Otherwise, blur all windows.
-            new_optimization          = true,  -- If true, uses a new blur optimization that can be faster on some systems. May cause issues on some drivers. Use the old optimization if you experience issues.
             size                      = 8,
             passes                    = 3,
             brightness                = 1,
@@ -233,7 +231,6 @@ hl.config({
 hl.config({
     misc = {
         force_default_wallpaper      = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        background_color             = rgba(D1011FF),
         disable_hyprland_logo        = false, -- If true disables the random hyprland logo / anime girl background. :(
         disable_splash_rendering     = true,
         vrr                          = 0,
@@ -269,7 +266,6 @@ hl.config({
         touchpad               = {
             natural_scroll = true,
             disable_while_typing = true,
-            clicfinger_behavior = true,
         },
     },
 })
@@ -386,7 +382,7 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- ############ RESIZE MODE #############
-hl.bind(mainMod .. " + RCTRL", hl.dsp.submap("resize"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.submap("resize"))
 
 hl.define_submap("resize", function()
     hl.bind("right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
