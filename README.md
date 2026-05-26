@@ -49,7 +49,7 @@ Do not run the installer as `root`.
 ## Quick start
 
 ```bash
-git clone https://github.com/murobbi-sh/dot-modul.git
+git clone https://github.com/Alfihri12/dot-modul.git
 cd dot-modul
 ./install.sh
 ```
