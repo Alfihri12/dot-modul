@@ -1,0 +1,3 @@
+vim.opt.confirm = true
+
+
