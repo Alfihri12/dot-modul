@@ -442,7 +442,7 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(editor))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(notes))
-hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd(screenshot))
+hl.bind(shiftMod .. " + S", hl.dsp.exec_cmd(screenshot))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
 
 -- ############ WINDOW CONTROL #############
@@ -477,8 +477,8 @@ hl.bind(mainMod .. " + O", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + I", hl.dsp.window.float({ action = "toggle" }))
 
 -- special workspace
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(shiftMod .. " + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mainMod .. " + M", hl.dsp.workspace.toggle_special("magic"))
+hl.bind(shiftMod .. " + M", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- ############ WORKSPACES #############
 
@@ -527,7 +527,7 @@ hl.define_submap("resize", function()
 end)
 
 -- ############ SYSTEM / SCRIPTS #############
-hl.bind(shiftMod .. " + M", hl.dsp.exec_cmd("~/.config/hypr/scripts/restart/selector.sh"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/restart/selector.sh"))
 hl.bind(shiftMod .. " + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/wal-all.sh"))
 hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("hyprlock"))
 
