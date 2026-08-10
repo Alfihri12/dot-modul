@@ -10,11 +10,12 @@ local altMod      = "SUPER + ALT"
 local terminal    = "kitty"
 local fileManager = "thunar"
 local menu        = "pkill fuzzel || fuzzel"
-local browser     = "brave"
+local browser     = "librewolf"
 local editor      = "code"
 local notes       = "obsidian"
 local clipboard   = "kitty cliphist list"
 local screenshot  = [[grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%s).png]]
+local emojiPicker  = "~/.config/fuzzel/emoji-picker.sh"
 
 -- ############ APPS #############
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
@@ -25,7 +26,7 @@ hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(editor))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(notes))
 hl.bind(shiftMod .. " + S", hl.dsp.exec_cmd(screenshot))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
-
+hl.bind(mainMod .. " + period", hl.dsp.exec_cmd(emojiPicker))
 -- ############ WINDOW CONTROL #############
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 
