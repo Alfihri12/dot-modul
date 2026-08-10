@@ -3,6 +3,7 @@
 FUZZEL_DIR="$HOME/.config/fuzzel"
 EMOJI_FILE="$FUZZEL_DIR/emojis.txt"
 RECENT_FILE="$FUZZEL_DIR/recent.txt"
+MAX_RECENT=20
 
 touch "$RECENT_FILE"
 
@@ -10,20 +11,19 @@ selected=$(
     {
         cat "$RECENT_FILE"
         grep -Fvxf "$RECENT_FILE" "$EMOJI_FILE"
-    } |
-    fuzzel \
-        --dmenu \
-        --prompt="Emoji > "
+    } | fuzzel --dmenu --prompt="Emoji > "
 )
 
 [ -z "$selected" ] && exit 0
 
 emoji=$(printf '%s' "$selected" | cut -d' ' -f1)
 
+# Ketik emoji pake wtype
 wtype "$emoji"
 
-grep -Fvxf <(printf '%s\n' "$selected") "$RECENT_FILE" > "$RECENT_FILE.tmp"
-printf '%s\n' "$selected" > "$RECENT_FILE.new"
-cat "$RECENT_FILE.tmp" >> "$RECENT_FILE.new"
-mv "$RECENT_FILE.new" "$RECENT_FILE"
-rm "$RECENT_FILE.tmp"
+# Update recent: simpan yang baru di atas, buang duplikat, batasi maksimal 20 item
+{
+    printf '%s\n' "$selected"
+    grep -Fvx "$selected" "$RECENT_FILE"
+} | head -n "$MAX_RECENT" > "$RECENT_FILE.tmp" && mv "$RECENT_FILE.tmp" "$RECENT_FILE"
+
