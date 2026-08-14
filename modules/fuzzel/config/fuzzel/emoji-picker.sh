@@ -18,7 +18,10 @@ selected=$(
 
 emoji=$(printf '%s' "$selected" | cut -d' ' -f1)
 
-# Ketik emoji pake wtype
+# Simpan emoji ke clipboard tanpa karakter newline ekstra
+printf '%s' "$emoji" | wl-copy
+
+# (Opsional) Jika kamu ingin emojinya langsung diketik otomatis SEKALIGUS masuk clipboard,
 wtype "$emoji"
 
 # Update recent: simpan yang baru di atas, buang duplikat, batasi maksimal 20 item
@@ -26,4 +29,3 @@ wtype "$emoji"
     printf '%s\n' "$selected"
     grep -Fvx "$selected" "$RECENT_FILE"
 } | head -n "$MAX_RECENT" > "$RECENT_FILE.tmp" && mv "$RECENT_FILE.tmp" "$RECENT_FILE"
-
