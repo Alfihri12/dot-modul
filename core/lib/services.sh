@@ -9,7 +9,7 @@ enable_service() {
     fi
 
     log_info_scope "service" "Enabling system service $service"
-    sudo systemctl enable --now "$service"
+    sudo systemctl enable "$service"
 }
 
 enable_user_service() {
@@ -21,7 +21,7 @@ enable_user_service() {
     fi
 
     log_info_scope "service" "Enabling user service $service"
-    systemctl --user enable --now "$service"
+    systemctl --user enable "$service"
 }
 
 enable_services() {
