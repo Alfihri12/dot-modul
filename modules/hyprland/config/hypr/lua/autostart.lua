@@ -17,3 +17,5 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("cliphist daemon")                                                       -- Start clipboard manager daemon
     hl.exec_cmd("kdeconnectd")                                                           -- Start KDE Connect daemon
 end)
+
+
