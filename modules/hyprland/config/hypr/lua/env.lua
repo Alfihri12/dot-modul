@@ -14,9 +14,8 @@ hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 hl.env("NVD_BACKEND", "direct")
 hl.env("GBM_BACKEND", "nvidia-drm")
 
--- disable hardware cursor (uncomment if you have cursor issues, e.g. black squares instead of a cursor)
-hl.env("WLR_NO_HARDWARE_CURSORS", "1")
-
 -- performance
 hl.env("__GL_GSYNC_ALLOWED", "0")
 hl.env("__GL_VRR_ALLOWED", "0")
+
+

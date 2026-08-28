@@ -19,7 +19,7 @@ selected=$(
 emoji=$(printf '%s' "$selected" | cut -d' ' -f1)
 
 # Simpan emoji ke clipboard tanpa karakter newline ekstra
-printf '%s' "$emoji" | wl-copy
+# printf '%s' "$emoji" | wl-copy
 
 # (Opsional) Jika kamu ingin emojinya langsung diketik otomatis SEKALIGUS masuk clipboard,
 wtype "$emoji"

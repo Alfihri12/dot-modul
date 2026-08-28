@@ -1,12 +1,27 @@
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
+    opts = {
+      window = {
+        position = "float",
+        width = 30,
+        mappings = {
+          ["<CR>"] = "open",
+          ["l"] = "open",
+          ["h"] = "close_node",
+        }
+      }
+    },
     dependencies = {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons", -- optional, but recommended
+      "nvim-tree/nvim-web-devicons", 
     },
-    lazy = false, -- neo-tree will lazily load itself
+    lazy = false,
   }
 }
+
+
+
+
+

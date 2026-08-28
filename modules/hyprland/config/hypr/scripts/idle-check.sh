@@ -12,3 +12,7 @@ fi
 # Jalankan perintah sesuai yang diminta sama hypridle
 # $1 itu argumen yang lu kirim dari config hypridle
 $1
+
+
+
+

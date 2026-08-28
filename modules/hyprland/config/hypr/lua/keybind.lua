@@ -3,19 +3,21 @@
 ---------------------
 
 -- ############ VARIABLES #############
-local mainMod     = "SUPER"
-local shiftMod    = "SUPER + SHIFT"
-local altMod      = "SUPER + ALT"
+local mainMod       = "SUPER"
+local shiftMod      = "SUPER + SHIFT"
+local altMod        = "SUPER + ALT"
 
-local terminal    = "kitty"
-local fileManager = "thunar"
-local menu        = "pkill fuzzel || fuzzel"
-local browser     = "brave"
-local editor      = "code"
-local notes       = "obsidian"
-local clipboard   = "kitty cliphist list"
-local screenshot  = [[grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%s).png]]
-local emojiPicker  = "~/.config/fuzzel/emoji-picker.sh"
+local terminal      = "kitty"
+local fileManager   = "thunar"
+local menu          = "pkill fuzzel || fuzzel"
+local browser       = "librewolf"
+local editor        = "code"
+local notes         = "obsidian"
+local clipboard     = "kitty cliphist list"
+local ssFull        = [[grim ~/Pictures/Screenshots/$(date +%s).png]]                    
+local ssArea        = [[grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%s).png]]
+local ssWindow      = [[grim -g "$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" ~/Pictures/Screenshots/$(date +%s).png]]
+local emojiPicker   = "~/.config/fuzzel/emoji-picker.sh"
 
 -- ############ APPS #############
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
@@ -24,7 +26,9 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(editor))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(notes))
-hl.bind(shiftMod .. " + S", hl.dsp.exec_cmd(screenshot))
+hl.bind( " + Print", hl.dsp.exec_cmd(ssFull))
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(ssArea))
+hl.bind(altMod .. " + Print", hl.dsp.exec_cmd(ssWindow))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
 hl.bind(mainMod .. " + period", hl.dsp.exec_cmd(emojiPicker))
 -- ############ WINDOW CONTROL #############
@@ -59,8 +63,8 @@ hl.bind(mainMod .. " + O", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + I", hl.dsp.window.float({ action = "toggle" }))
 
 -- special workspace
-hl.bind(mainMod .. " + M", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(shiftMod .. " + M", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
+hl.bind(shiftMod .. " + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- ############ WORKSPACES #############
 

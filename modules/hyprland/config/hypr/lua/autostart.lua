@@ -15,7 +15,5 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("wl-paste --type text --watch cliphist store")                           -- Start clipboard manager for text
     hl.exec_cmd("wl-paste --type image --watch cliphist store")                          -- Start clipboard manager for images
     hl.exec_cmd("cliphist daemon")                                                       -- Start clipboard manager daemon
-    hl.exec_cmd("kdeconnectd")                                                           -- Start KDE Connect daemon
+    -- hl.exec_cmd("kdeconnectd")                                                           -- Start KDE Connect daemon
 end)
-
-

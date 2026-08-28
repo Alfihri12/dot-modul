@@ -54,7 +54,7 @@
   },
   "custom/chrome": {
     "format": "  ",
-    "on-click": "google-chrome-stable"
+    "on-click": "librewolf"
   },
   "wireplumber": {
     "format": "  {volume}%",
