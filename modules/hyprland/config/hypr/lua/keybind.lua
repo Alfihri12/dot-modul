@@ -66,6 +66,11 @@ hl.bind(mainMod .. " + I", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(shiftMod .. " + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
+-- ############ SYSTEM / SCRIPTS #############
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/restart/selector.sh"))
+hl.bind(shiftMod .. " + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/wal-all.sh"))
+-- hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("hyprlock"))
+
 -- ############ WORKSPACES #############
 
 -- switch workspace: SUPER + 1..0
@@ -111,11 +116,6 @@ hl.define_submap("resize", function()
 
     hl.bind("escape", hl.dsp.submap("reset"))
 end)
-
--- ############ SYSTEM / SCRIPTS #############
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/restart/selector.sh"))
-hl.bind(shiftMod .. " + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/wal-all.sh"))
-hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("hyprlock"))
 
 -- ############ MEDIA KEYS #############
 hl.bind("XF86AudioRaiseVolume",

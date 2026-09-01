@@ -1,4 +1,4 @@
--- Path tempat lazy.nvim akan diinstall
+--Path tempat lazy.nvim akan diinstall
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 -- Install lazy.nvim jika belum ada
